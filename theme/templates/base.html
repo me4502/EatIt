@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ DEFAULT_LANG }}">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    {% include "header.html" %}
+    {% block head %}
+    {% endblock %}
 </head>
-<body>
-$END$
+
+<body class="flex-vert">
+    <nav class="z-depth-2">
+        <div class="nav-wrapper">
+            <a href="#" data-activates='dropdown1' data-beloworigin="true" data-gutter="-10" id="eat_it_button" class="brand-logo dropdown-button left"><i class="material-icons">view_list</i> Eat It</a>
+            <img class="logo_image" src="theme/img/logo2.png">
+            <a href="#" id="give_it_button" class="brand-logo right">Give It<i class="material-icons right">add</i></a>
+        </div>
+    </nav>
+    <main>
+        <!-- Dropdown Structure 1 -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><p id="filter_title">Filters</p></li>
+            <li class="divider"></li>
+            <li><a href="#!" class="dropdown_item waves-effect" id="vegetarian">Vegetarian<i class="material-icons right hide">done</i></a></li>
+            <li><a href="#!" class="dropdown_item waves-effect" id="full_meal">Full Meal<i class="material-icons right hide">done</i></a></li>
+            <li><a href="#!" class="dropdown_item waves-effect" id="gluten_free">Gluten Free<i class="material-icons right">done</i></a></li>
+            <li><a href="#!" class="dropdown_item waves-effect" id="untouched">"Untouched"<i class="material-icons right hide">done</i></a></li>
+        </ul>
+
+        <!-- Dropdown Structure 2 -->
+        <ul id='dropdown2' class=''>
+            <li><p id="giveFood_title">Give Food</p></li>
+            <li class="divider"></li>
+            <li><input type="text" class="giveFoodItem waves-effect" placeholder="Enter a brief name for your food" id="foodName"></li>
+            <li><input type="text" class="giveFoodItem waves-effect" placeholder="How many people can it serve?" id="foodAmount"></li>
+            <li><input type="text" class="giveFoodItem waves-effect" placeholder="When can people pick up your food until?" id="foodExpiry"></li>
+            <li><input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription"></li>
+            <li><input type="text" class="giveFoodItem waves-effect" placeholder="Any special dietary considerations?" id="foodDietary"></li>
+            <li><input type="submit" class="btn blue" name="submit"  id="newFood"></li>
+        </ul>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% include "footer.html" %}
 </body>
 </html>
