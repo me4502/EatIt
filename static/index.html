@@ -22,12 +22,26 @@
         main {
             flex: 1 0 auto;
         }
+
+        .map-responsive{
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+        }
+        .map-responsive iframe{
+            left:0;
+            top:0;
+            height:100%;
+            width:100%;
+            position:absolute;
+        }
     </style>
 </head>
 <body class="default-primary-color flex-vert">
 <nav>
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">EatIt</a>
+        <a href="#" class="brand-logo center">EatIt</a>
         <ul id="nav-mobile" class="right">
             <li><a href="#"><i class="material-icons">account_circle</i></a></li>
         </ul>
@@ -35,7 +49,7 @@
 </nav>
 
 <main>
-    <div class="container">
+    <div style="height: 100%; min-height: 100%;" class="map-responsive">
         <iframe
                 width="100%"
                 height="100%"
