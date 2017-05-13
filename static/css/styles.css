@@ -21,3 +21,7 @@ main {
     width:100%;
     position:absolute;
 }
+
+.page-footer {
+    padding-top: 2px;
+}
