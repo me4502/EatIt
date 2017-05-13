@@ -7,7 +7,9 @@ include_once('header.php');
 function customPageHeader(){?>
     <!-- Page specific header HTML here -->
 <?php } ?>
+                    title: 'Hello World!'
 
+                    title: 'Hello World!'
 <main>
     <div id="mapDiv" class="">
         <div id="map"></div>
