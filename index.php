@@ -9,15 +9,28 @@ function customPageHeader(){?>
 <?php } ?>
 
 <main>
-    <div id="mapDiv">
-        <iframe
-                width="100%"
-                height="100%"
-                scrolling="no"
-                frameborder="0"
-                style="border:0;"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDopu9r8iJNDT0Sm0VlqRhqSv2mXGNC40E&q=QUT,Brisbane+QLD" allowfullscreen>
-        </iframe>
+    <div id="mapDiv" class="">
+        <div id="map"></div>
+        <script>
+
+            function initMap() {
+                var myLatLng = {lat: -27.477883, lng: 153.029223};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7j0r7la3KRwxHtRXqqykMozQy2UXujLs&callback=initMap">
+        </script>
     </div>
 </main>
 
