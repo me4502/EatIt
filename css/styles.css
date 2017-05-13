@@ -48,3 +48,7 @@ nav {
 #map {
     height: 92vh;
 }
+
+@viewport {
+    orientation: portrait;
+}
