@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    background-color: #E91E63;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 4px;
+    color: #FFF;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.page-footer {
+    padding-top: 0;
+}
+
+nav a {
+    font-size: 150%!important;
+}
+
+nav, .brand-logo {
+    height: 8vh;
+    background-color: #E91E63;
+}
+
+#eat_it_button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#give_it_button, .filter_title {
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+#map {
+    height: 92vh;
+}
+
+#filter_title {
+    padding-left: 20px;
+    font-size: 150%!important;
+}
+
+#dropdown1 {
+    min-width: 65%;
+    background-color: #FFF;
+}
+
+#dropdown2 {
+    width: 100%;
+    background-color: #FFF;
+    color: black;
+}
+
+.dropdown-content li>a>i {
+    margin: 0;
+}
+
+div.card {
+    margin: 0;
+}
+
+.logo_image {
+    padding-top: 2vh;
+    position: absolute;
+    right: 47vw;
+    width: 4vh;
+    margin: auto;
+}
+
+.report {
+    padding-top: 5px;
+    padding-bottom:0;
+    width:100%;
+    color: #FFF!important;
+}
+
+.report_icon {
+    font-size: 20px;
+    display: inline-block;
+}
+
+#giveFood_title {
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 150%!important;
+    color: #000;
+}
+
+.giveFoodItem {
+    padding-left: 3vh;
+    padding-top: 10px;
+    width: 94vw!important;
+}
