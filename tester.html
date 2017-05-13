@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var URL = 'https://evf2nv3589.execute-api.us-west-2.amazonaws.com/dev'
+        $(document).ready(function() {
+            $('form').submit(function (e) {
+                var nv = $('form').serializeArray();
+
+                var obj = {};
+                for(var i = 0; i < nv.length; i++) {
+                    obj[nv[i].name] = nv[i].value;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: URL,
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json'
+                }).done(function(data, status) {
+                    console.log(data);
+                }).fail(function() {
+                    console.log("Not good my dudes");  
+                    console.log(arguments);
+                });
+
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        Name: <input type="text" name="foodname" /><br />
+        Description: <input type="text" name="description" /><br />
+        Longitude: <input type="text" name="longitude" /><br />
+        Latitude: <input type="text" name="latitude" /><br />
+        Servings: <input type="number" name="servings" /><br />
+        Expiry: <input type="text" name="expiry" /><br />
+        <button type="submit">Push</button>
+    </form>
+</body>
+</html>
