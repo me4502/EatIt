@@ -3,6 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
+    background-color: #E91E63;
 }
 
 p {
@@ -38,6 +39,7 @@ nav a {
 
 nav, .brand-logo {
     height: 8vh;
+    background-color: #E91E63;
 }
 
 #eat_it_button {
@@ -71,4 +73,12 @@ nav, .brand-logo {
 
 div.card {
     margin: 0;
+}
+
+.logo_image {
+    padding-top: 2vh;
+    position: absolute;
+    right: 47vw;
+    width: 4vh;
+    margin: auto;
 }
