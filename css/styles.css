@@ -31,8 +31,8 @@ nav a {
     font-size: 150%!important;
 }
 
-nav {
-    max-height: 8vh;
+nav, .brand-logo {
+    height: 8vh;
 }
 
 #eat_it_button {
@@ -47,8 +47,4 @@ nav {
 
 #map {
     height: 92vh;
-}
-
-@viewport {
-    orientation: portrait;
 }
