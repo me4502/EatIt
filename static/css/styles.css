@@ -9,6 +9,7 @@ body {
 p {
     font-family: 'Roboto', sans-serif;
     padding-top: 4px;
+    color: #FFF;
 }
 
 main {
@@ -62,9 +63,14 @@ nav, .brand-logo {
 }
 
 #dropdown1 {
-    min-width: 50%;
-    position: relative;
-    left: -20px;
+    min-width: 65%;
+    background-color: #FFF;
+}
+
+#dropdown2 {
+    width: 100%;
+    background-color: #FFF;
+    color: black;
 }
 
 .dropdown-content li>a>i {
@@ -81,4 +87,29 @@ div.card {
     right: 47vw;
     width: 4vh;
     margin: auto;
+}
+
+.report {
+    padding-top: 5px;
+    padding-bottom:0;
+    width:100%;
+    color: #FFF!important;
+}
+
+.report_icon {
+    font-size: 20px;
+    display: inline-block;
+}
+
+#giveFood_title {
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 150%!important;
+    color: #000;
+}
+
+.giveFoodItem {
+    padding-left: 3vh;
+    padding-top: 10px;
+    width: 94vw!important;
 }
