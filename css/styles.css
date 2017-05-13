@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Oswald', sans-serif;
 }
 
 main {
@@ -23,5 +24,27 @@ main {
 }
 
 .page-footer {
-    padding-top: 2px;
+    padding-top: 0;
+}
+
+nav a {
+    font-size: 150%!important;
+}
+
+nav {
+    max-height: 8vh;
+}
+
+#eat_it_button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#give_it_button {
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+#map {
+    height: 92vh;
 }
