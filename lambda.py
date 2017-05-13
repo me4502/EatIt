@@ -58,6 +58,7 @@ def get_nearby(longitude, latitude):
         for km in BOUNDARIES
     ]
 
+    # TODO: Check not expired
     response = food_table.scan(
         FilterExpression=(
             Key('longitude').between(*longitude_boundaries) &
@@ -77,5 +78,18 @@ def lambda_handler(event, context):
         else:
             return get_nearby(event['longitude'], event['latitude'])
     else:
-        add_food_log('Memes', 'A spicey meme', event['longitude'], event['latitude'], 1, datetime.datetime.now())
-        return 'memes'
+        needed = ['foodname', 'description', 'longitude', 'latitude',
+                  'servings', 'expiry']
+        body = event.get('body', {})
+        if not all(n in body for n in needed):
+            return {'error': 'Invalid body', 'body': body}
+        else:
+            add_food_log(
+                name=body['foodname'],
+                description=body['description'],
+                longitude=body['longitude'],
+                latitude=body['latitude'],
+                servings=body['servings'],
+                expiry=body['expiry']
+            )
+            return {'success': True}
