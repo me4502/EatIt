@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 BRANCH=gh-pages
 TARGET_REPO=Me4502/EatIt.git
-WEBSITE_FOLDER=static
+WEBSITE_FOLDER=output
 
 echo -e "Testing travis-encrypt"
 echo -e "$VARNAME"
