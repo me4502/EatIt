@@ -50,7 +50,7 @@ function customPageHeader(){?>
                     <img src="img/burritos.jpeg">\
                     <span class="card-title">' + foodName +
                     '</span>\
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">navigation</i></a>\
+                    <a class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">navigation</i></a>\
                     </div><div class="card-content"><p>' + foodDistance + ' away by ' + foodGiver + '</p><p>' +
                         foodDescription + '</p>Diet Info: ' + dietInfo + '<p>Valid Until: ' + foodExpire
                     + '</p>' + foodAddress + '</p><p style="padding-top: 5px; padding-bottom:0;" class="center-align">' +
