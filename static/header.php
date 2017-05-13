@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/styles.css" rel="stylesheet">
 </head>
 
@@ -24,8 +25,7 @@
 <body class="flex-vert">
 <nav>
     <div class="nav-wrapper z-depth-1">
-        <a href="#" id="eat_it_button" class="brand-logo waves-effect waves-light left"><i class="material-icons">view_list</i> Eat It</a>
-        <a href="#" id="eat_it_button" class="brand-logo waves-effect waves-light left"><i class="material-icons">view_list</i> Eat It</a>
+        <a href="#" data-activates='dropdown1' data-beloworigin="true" data-gutter="-10" id="eat_it_button" class="brand-logo dropdown-button left"><i class="material-icons">view_list</i> Eat It</a>
         <a href="#" id="give_it_button" class="brand-logo waves-effect waves-light right">Give It<i class="material-icons right">add</i></a>
         <!--<ul id="nav-mobile" class="right">
             <li><a href="#"><i class="material-icons">account_circle</i></a></li>
