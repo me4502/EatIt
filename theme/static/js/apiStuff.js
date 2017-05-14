@@ -6,8 +6,8 @@ function submitForm(e) {
     data['description'] = $('#foodDescription').val();
     data['servings'] = $('#foodAmount').val();
     data['expiry'] = $('#foodExpiry').val();
-    data['latitude'] = "";
-    data['longitude'] = "";
+    data['latitude'] = lat;
+    data['longitude'] = lon;
 
     $.ajax({
         type: "POST",
