@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Courier New', sans-serif;
     background-color: #E91E63;
 }
 
