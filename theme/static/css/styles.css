@@ -106,10 +106,11 @@ div.card {
 }
 
 #giveFood_title {
-    padding-top: 20px;
     padding-left: 20px;
     font-size: 150%!important;
     color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .giveFoodItem {
