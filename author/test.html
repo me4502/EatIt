@@ -164,6 +164,30 @@
                 e.preventDefault();
             });
         }
+        $(document).ready(function() {
+            $('form').submit(function (e) {
+                var nv = $('form').serializeArray();
+
+                var obj = {};
+                for(var i = 0; i < nv.length; i++) {
+                    obj[nv[i].name] = nv[i].value;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: URL,
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json'
+                }).done(function(data, status) {
+                    console.log(data);
+                }).fail(function() {
+                    console.log("Not good my dudes");
+                    console.log(arguments);
+                });
+
+                e.preventDefault();
+            });
+        });
     </script>
 </body>
 </html>
