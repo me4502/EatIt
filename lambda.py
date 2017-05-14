@@ -3,6 +3,7 @@ from boto3.dynamodb.conditions import Key
 import uuid
 import datetime
 import math
+import functools
 
 MAX_DISTANCE = 5 # Kilometers
 BOUNDARIES = [-MAX_DISTANCE, MAX_DISTANCE]
@@ -11,12 +12,25 @@ DECIMAL_PLACES = 9 # DynamoDB doesn't like decimals, so we make them ints
 dynamodb = boto3.resource('dynamodb')
 food_table = dynamodb.Table('angel-food')
 
+def return_json(fn):
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        try:
+            result = fn(*args, **kwargs)
+            obj = {'success': True, 'data': result}
+        except Exception as e:
+            obj = {'sucess': False, 'error': e[0]}
+
+        return obj
+
+    return wrapper
+
 def add_food_log(name, description, longitude, latitude, servings, expiry):
     try:
         longitude = float_to_dyna(float(longitude))
         latitude = float_to_dyna(float(latitude))
     except:
-        return {'error': "Invalid Longitude/Latitude"}
+        raise ValueError("Invalid Longitude/Latitude")
 
     food_table.put_item(Item={
         'uuid': str(uuid.uuid4()),
@@ -47,7 +61,7 @@ def get_nearby(longitude, latitude):
         longitude = float(longitude)
         latitude = float(latitude)
     except:
-        return {'error': "Invalid Longitude/Latitude"}
+        raise ValueError("Invalid Longitude/Latitude")
 
     latitude_boundaries = [
         float_to_dyna(get_latitude_from_km(longitude, latitude, km))
@@ -68,13 +82,14 @@ def get_nearby(longitude, latitude):
 
     return {'items': response['Items']}
 
+@return_json
 def lambda_handler(event, context):
     if 'httpMethod' not in event:
-        return {'error': 'Bypassed mapping'}
+        raise ValueError("Bypassed mapping")
 
     if event['httpMethod'] == 'GET':
         if 'longitude' not in event or 'latitude' not in event:
-            return {'error': 'Missing long/lat'}
+            raise ValueError("Missing long/lat")
         else:
             return get_nearby(event['longitude'], event['latitude'])
     else:
@@ -82,7 +97,7 @@ def lambda_handler(event, context):
                   'servings', 'expiry']
         body = event.get('body', {})
         if not all(n in body for n in needed):
-            return {'error': 'Invalid body', 'body': body}
+            raise ValueError("Invalid Body")
         else:
             add_food_log(
                 name=body['foodname'],
@@ -92,4 +107,3 @@ def lambda_handler(event, context):
                 servings=body['servings'],
                 expiry=body['expiry']
             )
-            return {'success': True}
