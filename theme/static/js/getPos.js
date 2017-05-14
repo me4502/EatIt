@@ -19,5 +19,8 @@ function returnPos(position) {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     console.log({"lat":lat, "lon":lon});
+    var status_element = document.getElementById("geo-status");
+    status_element.innerHTML = "Location Saved.";
+
     return {"lat":lat, "lon":lon};
 }
