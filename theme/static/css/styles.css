@@ -111,5 +111,14 @@ div.card {
 .giveFoodItem {
     padding-left: 3vh;
     padding-top: 10px;
-    width: 94vw!important;
+    width: 100%;
+}
+
+.foodAmount, input[type=range] {
+    color:grey;
+    padding-left: 20px;
+}
+
+input {
+    width: 90%!important;
 }
