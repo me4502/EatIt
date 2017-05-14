@@ -10,10 +10,14 @@ a {
     color: #541ae2;
 }
 
-p {
-    font-family: 'Roboto', sans-serif;
+p, span {
+    font-family: 'Courier New', sans-serif;
     padding-top: 4px;
     color: #541ae2;
+}
+
+#slides {
+    background-color: #ff233c;
 }
 
 main {
@@ -40,10 +44,15 @@ main {
 
 nav a {
     font-size: 150%!important;
+    color: #541ae2 !important;
 }
 
 nav, .brand-logo {
     height: 8vh;
+}
+
+nav {
+    background-color: #FFF !important;
 }
 
 #eat_it_button {
@@ -68,13 +77,13 @@ nav, .brand-logo {
 #dropdown1 {
     min-width: 65%;
     background-color: #FFFFFF;
-    color: black;
+    color: #541ae2;
 }
 
 #dropdown2 {
     width: 100%;
     background-color: #FFFFFF;
-    color: black;
+    color: #541ae2;
 }
 
 .dropdown-content li>a>i {
@@ -108,7 +117,7 @@ div.card {
 #giveFood_title {
     padding-left: 20px;
     font-size: 150%!important;
-    color: #000;
+    color: #541ae2;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -143,8 +152,7 @@ input {
     display: block;
     cursor: pointer;
     width: 50%;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto 0;
 }
 
 .modal-content {
