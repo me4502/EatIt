@@ -39,10 +39,11 @@
                         <input type="text"  class="giveFoodItem waves-effect" placeholder="Enter a brief name" id="foodName">
                         <p class="foodAmount">How many people can it feed?</p>
                         <input type="range" name="foodAmount" min="0" max="10">
-                        <input type="text" class="giveFoodItem waves-effect" placeholder="When will you be available to?" id="foodExpiry">
-                        <input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="When is it available until?" id="foodExpiry">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="Describe your food offering." id="foodDescription">
                         <input type="text" class="giveFoodItem waves-effect" placeholder="Any dietary considerations?" id="foodDietary">
                         <button class="button-input" onclick="getPos()">Set location</button>
+                        <p style="text-align: center; padding-bottom:0; margin-bottom: 0;" id="geo-status"></p>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="submitForm()">Submit</a>
@@ -56,41 +57,5 @@
         {% endblock %}
     </main>
     {% include "footer.html" %}
-
-    <script>
-        var URL = 'https://evf2nv3589.execute-api.us-west-2.amazonaws.com/dev';
-
-        function submitForm(e) {
-            var data = {};
-            data['foodname'] = $('#foodName').val();
-            data['description'] = $('#foodDescription').val();
-            data['servings'] = $('#foodAmount').val();
-            data['expiry'] = $('#foodExpiry').val();
-            data['latitude'] = "";
-            data['longitude'] = "";
-
-            $.ajax({
-                type: "POST",
-                url: URL,
-                data: JSON.stringify(data),
-                contentType: 'application/json'
-            }).done(function(data, status) {
-                if (data.error) {
-                    console.log(data);
-                    Materialize.toast('An error occurred while creating your event!', 4000);
-
-                    e.preventDefault();
-                } else {
-                    Materialize.toast("Submitted Event!", 4000);
-                }
-            }).fail(function() {
-                Materialize.toast('A catastrophic error occurred while creating your event!', 4000);
-                console.log("Not good my dudes");
-                console.log(arguments);
-
-                e.preventDefault();
-            });
-        }
-    </script>
 </body>
 </html>
