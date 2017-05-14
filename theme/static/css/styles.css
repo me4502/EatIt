@@ -127,6 +127,25 @@ input {
     width: 90%!important;
 }
 
+.button-input {
+    padding: 4px;
+    margin: 0;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 3px 0 #CCC, 0 -1px #FFF inset;
+    -webkit-box-shadow: 0 3px 0 #CCC, 0 -1px #FFF inset;
+    box-shadow: 2px 3px 0 #CCC, 0 -1px #FFF inset;
+    background: #F8F8F8;
+    color: #888;
+    border: none;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+}
+
 .modal-content {
     color: grey;
 }
