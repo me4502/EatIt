@@ -3,13 +3,17 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Courier New', sans-serif;
-    background-color: #E91E63;
+    background-color: #FFFFFF;
+}
+
+a {
+    color: #541ae2;
 }
 
 p {
     font-family: 'Roboto', sans-serif;
     padding-top: 4px;
-    color: #FFF;
+    color: #541ae2;
 }
 
 main {
@@ -40,7 +44,6 @@ nav a {
 
 nav, .brand-logo {
     height: 8vh;
-    background-color: #E91E63;
 }
 
 #eat_it_button {
@@ -64,12 +67,13 @@ nav, .brand-logo {
 
 #dropdown1 {
     min-width: 65%;
-    background-color: #FFF;
+    background-color: #FFFFFF;
+    color: black;
 }
 
 #dropdown2 {
     width: 100%;
-    background-color: #FFF;
+    background-color: #FFFFFF;
     color: black;
 }
 
@@ -93,7 +97,7 @@ div.card {
     padding-top: 5px;
     padding-bottom:0;
     width:100%;
-    color: #FFF!important;
+    color: #FFFFFF !important;
 }
 
 .report_icon {
