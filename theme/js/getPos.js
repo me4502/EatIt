@@ -21,6 +21,7 @@ function returnPos(position) {
     console.log({"lat":lat, "lon":lon});
     var status_element = document.getElementById("geo-status");
     status_element.innerHTML = "Location Saved.";
+    Materialize.toast('Location Saved!', 3000) // 4000 is the duration of the toast
 
     return {"lat":lat, "lon":lon};
 }
