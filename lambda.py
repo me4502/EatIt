@@ -19,7 +19,7 @@ def return_json(fn):
             result = fn(*args, **kwargs)
             obj = {'success': True, 'data': result}
         except Exception as e:
-            obj = {'sucess': False, 'error': e[0]}
+            obj = {'success': False, 'error': e[0]}
 
         return obj
 
