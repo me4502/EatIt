@@ -37,6 +37,12 @@
         </div>
     </nav>
     <main>
+        <script>
+            $(document).ready(function(){
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal').modal();
+            });
+        </script>
         <!-- Dropdown Structure 2 -->
         <div id="modal1" class="modal">
             <div class="modal-content">
