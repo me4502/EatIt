@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="theme/js/getPos.js"></script>
 
 <!-- Local Assets -->
 <link rel="stylesheet" href="theme/css/styles.css">  
@@ -50,13 +51,16 @@
             <!-- Dropdown Structure 2 -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <p id="giveFood_title">Give Food</p>
-                    <input type="text"  class="giveFoodItem waves-effect" placeholder="Enter a brief name" id="foodName">
-                    <p class="foodAmount">How many people can it feed?</p>
-                    <input type="range" name="foodAmount" id="foodAmount" min="0" max="10">
-                    <input type="text" class="giveFoodItem waves-effect" placeholder="When can people pick up your food until?" id="foodExpiry">
-                    <input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription">
-                    <input type="text" class="giveFoodItem waves-effect" placeholder="Any special dietary considerations?" id="foodDietary">
+                        <p id="giveFood_title">Give Food</p>
+                        <span id="geo-error"></span>
+                        <li class="divider"></li>
+                        <input type="text"  class="giveFoodItem waves-effect" placeholder="Enter a brief name" id="foodName">
+                        <p class="foodAmount">How many people can it feed?</p>
+                        <input type="range" name="foodAmount" min="0" max="10">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="When will you be available to?" id="foodExpiry">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="Any dietary considerations?" id="foodDietary">
+                        <button class="button-input" onclick="getPos()">Set location</button>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="submitForm()">Submit</a>
@@ -139,30 +143,6 @@
                 e.preventDefault();
             });
         }
-        $(document).ready(function() {
-            $('form').submit(function (e) {
-                var nv = $('form').serializeArray();
-
-                var obj = {};
-                for(var i = 0; i < nv.length; i++) {
-                    obj[nv[i].name] = nv[i].value;
-                }
-
-                $.ajax({
-                    type: "POST",
-                    url: URL,
-                    data: JSON.stringify(obj),
-                    contentType: 'application/json'
-                }).done(function(data, status) {
-                    console.log(data);
-                }).fail(function() {
-                    console.log("Not good my dudes");
-                    console.log(arguments);
-                });
-
-                e.preventDefault();
-            });
-        });
     </script>
 </body>
 </html>
