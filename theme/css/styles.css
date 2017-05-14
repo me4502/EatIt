@@ -129,7 +129,6 @@ input {
 
 .button-input {
     padding: 4px;
-    margin: 0;
     -moz-border-radius: 5px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -144,6 +143,7 @@ input {
     cursor: pointer;
     width: 50%;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .modal-content {
