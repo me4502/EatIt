@@ -13,6 +13,13 @@
             <img class="logo_image" src="theme/img/logo2.png">
             <a href="#" data-activates='dropdown2' data-beloworigin="true" data-gutter="-10" id="give_it_button" class="brand-logo dropdown-button right">Give It<i class="material-icons right">add</i></a>
 
+            <script>
+                $(document).ready(function(){
+                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                    $('.modal').modal();
+                });
+            </script>
+
             <!-- Dropdown Structure 1 -->
             <ul id='dropdown1' class='dropdown-content'>
                 <li><p id="filter_title">Filters</p></li>
