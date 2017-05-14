@@ -122,3 +122,7 @@ div.card {
 input {
     width: 90%!important;
 }
+
+.modal-content {
+    color: grey;
+}
