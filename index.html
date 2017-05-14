@@ -24,7 +24,7 @@
         <div class="nav-wrapper">
             <a href="#" data-activates='dropdown1' data-beloworigin="true" data-gutter="-10" id="eat_it_button" class="brand-logo dropdown-button left"><i class="material-icons">view_list</i> Eat It</a>
             <img class="logo_image" src="theme/img/logo2.png">
-            <a href="#" data-activates='dropdown2' data-beloworigin="true" data-gutter="-10" id="give_it_button" class="brand-logo dropdown-button right">Give It<i class="material-icons right">add</i></a>
+            <a href="#modal1" id="give_it_button" class="brand-logo dropdown-button right">Give It<i class="material-icons right">add</i></a>
 
             <script>
                 $(document).ready(function(){
@@ -46,28 +46,19 @@
             <!-- Dropdown Structure 2 -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                        <li><p id="giveFood_title">Give Food</p></li>
+                        <p id="giveFood_title">Give Food</p>
                         <li class="divider"></li>
-                        <li><input type="text"  class="giveFoodItem waves-effect" placeholder="Enter a brief name for your food" id="foodName"></li>
-                        <li><p class="foodAmount">How many people can it feed?</p></li>
-                        <li><input type="range" name="foodAmount" min="0" max="10"></li>
-                        <li><input type="text" class="giveFoodItem waves-effect" placeholder="When can people pick up your food until?" id="foodExpiry"></li>
-                        <li><input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription"></li>
-                        <li><input type="text" class="giveFoodItem waves-effect" placeholder="Any special dietary considerations?" id="foodDietary"></li>
+                        <input type="text"  class="giveFoodItem waves-effect" placeholder="Enter a brief name for your food" id="foodName">
+                        <p class="foodAmount">How many people can it feed?</p>
+                        <input type="range" name="foodAmount" min="0" max="10">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="When can people pick up your food until?" id="foodExpiry">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription">
+                        <input type="text" class="giveFoodItem waves-effect" placeholder="Any special dietary considerations?" id="foodDietary">
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
                 </div>
-            <!--<ul id='dropdown2' class='dropdown-content'>
-                <li><p id="giveFood_title">Give Food</p></li>
-                <li class="divider"></li>
-                <li><input type="text" class="giveFoodItem waves-effect" placeholder="Enter a brief name for your food" id="foodName"></li>
-                <li><input type="text" class="giveFoodItem waves-effect" placeholder="How many people can it serve?" id="foodAmount"></li>
-                <li><input type="text" class="giveFoodItem waves-effect" placeholder="When can people pick up your food until?" id="foodExpiry"></li>
-                <li><input type="text" class="giveFoodItem waves-effect" placeholder="Tell us more about your food" id="foodDescription"></li>
-                <li><input type="text" class="giveFoodItem waves-effect" placeholder="Any special dietary considerations?" id="foodDietary"></li>
-                <li><input type="submit" class="btn blue" name="submit"  id="newFood"></li>
-            </ul>-->
+            </div>
         </div>
     </nav>
 
