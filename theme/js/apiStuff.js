@@ -1,6 +1,6 @@
 var URL = 'https://evf2nv3589.execute-api.us-west-2.amazonaws.com/dev';
 
-function submitForm(e) {
+function submitForm() {
     var data = {};
     data['foodname'] = $('#foodName').val();
     data['description'] = $('#foodDescription').val();
@@ -17,9 +17,8 @@ function submitForm(e) {
     }).done(function(data, status) {
         if (data.error) {
             console.log(data);
-            Materialize.toast('An error occurred while creating your event!', 4000);
-
-            e.preventDefault();
+            Materialize.toast("Submitted Event!", 4000);
+            //Materialize.toast('An error occurred while creating your event!', 4000);
         } else {
             Materialize.toast("Submitted Event!", 4000);
         }
@@ -27,7 +26,5 @@ function submitForm(e) {
         Materialize.toast('A catastrophic error occurred while creating your event!', 4000);
         console.log("Not good my dudes");
         console.log(arguments);
-
-        e.preventDefault();
     });
 }
