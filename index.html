@@ -97,13 +97,19 @@
 
             var contentString = '<div class="card">\
                     <div class="card-image">\
-                    <img src="theme/img/burritos.jpeg">\
-                    <span class="card-title">' + foodName +
-                '</span>\
-                <a target="_blank" href="https://www.google.com.au/maps/dir/-27.4767196,153.0273185/2+George+St,+Brisbane+City+QLD+4000/@-27.476608,153.0256562,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x6b915a105a45e513:0x58d37277a0e6c581!2m2!1d153.0283712!2d-27.4776064!3e2" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">navigation</i></a>\
-                </div><div class="card-content"><p>' + foodDistance + ' away by ' + foodGiver + '</p><p>' +
-                foodDescription + '</p>Diet Info: ' + dietInfo + '<p>Valid Until: ' + foodExpire
-                + '</p>' + foodAddress + '</p><i class="material-icons report_icon right">report_problem</i></div></div>';
+                        <img src="theme/img/burritos.jpeg">\
+                        <span class="card-title">' + foodName + '</span>\
+                        <a target="_blank" href="#!" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">add</i></a>\
+                        <a target="_blank" href="https://www.google.com.au/maps/dir/-27.4767196,153.0273185/2+George+St,+Brisbane+City+QLD+4000/@-27.476608,153.0256562,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x6b915a105a45e513:0x58d37277a0e6c581!2m2!1d153.0283712!2d-27.4776064!3e2" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">navigation</i></a>\
+                    </div>\
+                    <div class="card-content">\
+                        <p><b>' + foodDistance + ' away by ' + foodGiver + '</b></p>' +
+                        '<p>' + foodDescription + '</p>' +
+                        '<p>Closes: ' + foodExpire + '</p>' +
+                        '<p>Diet Info: ' + dietInfo + '</p>' +
+                        '<p>' + foodAddress + '</p><i class="material-icons report_icon right">report_problem</i>' +
+                    '</div>' +
+                '</div>';
 
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
